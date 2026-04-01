@@ -1,26 +1,26 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{color:#e0e6ed;background-color:#050510;background-image:radial-gradient(circle at 15%,#7000ff26 0%,#0000 25%),radial-gradient(circle at 85% 30%,#00f0ff26 0%,#0000 25%);background-attachment:fixed;font-family:Outfit,Inter,-apple-system,BlinkMacSystemFont,sans-serif;overflow-x:hidden}
+body:before{content:"";pointer-events:none;z-index:-1;background-image:linear-gradient(#00f0ff08 1px,#0000 1px),linear-gradient(90deg,#00f0ff08 1px,#0000 1px);background-size:50px 50px;width:100vw;height:100vh;position:fixed;top:0;left:0}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:#050510}
+::-webkit-scrollbar-thumb{background:linear-gradient(#00f0ff 0%,#bd00ff 100%);border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:linear-gradient(#00c2cf 0%,#9b00d4 100%)}
+@keyframes fadeInUp{0%{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{0%{opacity:0}to{opacity:1}}
+@keyframes glowPulse{0%{box-shadow:0 0 5px #00f0ff33}50%{box-shadow:0 0 20px #00f0ff80,0 0 10px #bd00ff4d}to{box-shadow:0 0 5px #00f0ff33}}
+@keyframes floating{0%{transform:translateY(0)}50%{transform:translateY(-10px)}to{transform:translateY(0)}}
+:root{--nav-height:80px}
+@media (max-width:768px){html{scroll-padding-top:var(--nav-height)}h1{font-size:1.8rem!important}h2{font-size:2rem!important}p{font-size:1rem!important}.mobile-stack{text-align:center;flex-direction:column!important}.mobile-reverse{flex-direction:column-reverse!important}.mobile-padding{padding-left:1rem!important;padding-right:1rem!important}.mobile-hidden{display:none!important}.desktop-hidden{display:flex!important}}
+.desktop-hidden{display:none}
+.mobile-nav-overlay{-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);z-index:999;background:#050510f2;flex-direction:column;justify-content:center;align-items:center;gap:2rem;width:100%;height:calc(100vh - 80px);transition:transform .3s ease-in-out;display:flex;position:fixed;top:80px;left:0;transform:translate(100%)}
+.mobile-nav-overlay.open{transform:translate(0)}
+body:before{background-size:30px 30px}
+.glass{-webkit-backdrop-filter:blur(16px);background:#0a0a19b3;border:1px solid #00f0ff1a;box-shadow:0 4px 30px #0000001a}
+.glass-panel{-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);background:linear-gradient(135deg,#ffffff08,#ffffff03);border:1px solid #ffffff0d;box-shadow:0 8px 32px #0000005e}
+.neon-text{text-shadow:0 0 10px #00f0ff80}
+.gradient-text{background:linear-gradient(135deg,#00f0ff 0%,#bd00ff 100%);-webkit-text-fill-color:transparent;-webkit-background-clip:text;background-clip:text}
+.hover-glow:hover{animation:2s infinite glowPulse}
+section{position:relative;overflow:hidden}

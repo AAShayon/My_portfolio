@@ -1,0 +1,142 @@
+export const personalInfo = {
+  name: "MD Asif Afroj Shayon",
+  title: "Software Engineer | Flutter Specialist",
+  bio: "Passionate Software Engineer specializing in mobile application development. I thrive on creating impactful, user-friendly solutions with expertise in Flutter, cross-platform development, and delivering robust, scalable applications.",
+  location: "Dhaka, Bangladesh",
+  company: "Orange Business Development Limited",
+  avatar: "https://avatars.githubusercontent.com/u/16820287?v=4",
+};
+
+export const skills = [
+  { name: "Flutter", category: "Mobile", level: 95, icon: "📱" },
+  { name: "Dart", category: "Mobile", level: 95, icon: "🎯" },
+  { name: "GetX", category: "Mobile", level: 90, icon: "⚡" },
+  { name: "Riverpod", category: "Mobile", level: 85, icon: "🌊" },
+  { name: "Provider", category: "Mobile", level: 85, icon: "🔄" },
+  { name: "Android", category: "Mobile", level: 80, icon: "🤖" },
+  { name: "Next.js", category: "Frontend", level: 75, icon: "⚛️" },
+  { name: "React", category: "Frontend", level: 75, icon: "⚛️" },
+  { name: "TypeScript", category: "Frontend", level: 80, icon: "📘" },
+  { name: "JavaScript", category: "Frontend", level: 85, icon: "💛" },
+  { name: "HTML/CSS", category: "Frontend", level: 90, icon: "🎨" },
+  { name: "Laravel", category: "Backend", level: 60, icon: "🐘" },
+  { name: "PHP", category: "Backend", level: 65, icon: "🔧" },
+  { name: "Node.js", category: "Backend", level: 55, icon: "🟢" },
+  { name: "MySQL", category: "Database", level: 80, icon: "🗄️" },
+  { name: "MongoDB", category: "Database", level: 70, icon: "🍃" },
+  { name: "Firebase", category: "Tools", level: 90, icon: "🔥" },
+  { name: "Git", category: "Tools", level: 90, icon: "📦" },
+  { name: "REST APIs", category: "Tools", level: 90, icon: "🌐" },
+  { name: "Scrum/Agile", category: "Tools", level: 85, icon: "🏃" },
+];
+
+export const experiences = [
+  {
+    company: "Orange Business Development Limited (Orangebd)",
+    position: "Software Engineer",
+    period: "September 2024 - Present",
+    location: "Dhaka, Bangladesh",
+    responsibilities: [
+      "Maintain and upgrade legacy projects ensuring smooth functionality and compatibility with latest technologies",
+      "Integrate payment gateways (Stripe, SSL Commerze) for seamless transactions",
+      "Implement Firebase push notifications for enhanced user engagement",
+      "Add Google Maps API for live tracking and location-based services",
+      "Troubleshoot, debug, and optimize background processes for seamless app performance",
+      "Implement innovative features and performance enhancements to elevate user experience",
+    ],
+  },
+  {
+    company: "Excel IT AI LTD",
+    position: "Associate Flutter Developer",
+    period: "September 2023 - September 2024",
+    location: "Dhaka, Bangladesh",
+    responsibilities: [
+      "Independently handled assigned mobile application projects following supervisor guidance",
+      "Conducted code reviews ensuring best practices and code consistency",
+      "Mentored junior developers, assisting in onboarding and knowledge sharing",
+      "Developed key features driving robust and scalable solutions",
+      "Collaborated directly with clients for requirement gathering and project updates",
+    ],
+  },
+  {
+    company: "Excel IT AI LTD",
+    position: "Flutter Developer Trainee",
+    period: "May 2023 - September 2023",
+    location: "Dhaka, Bangladesh",
+    responsibilities: [
+      "Built solid foundation in cross-platform development",
+      "Engaged in hands-on projects building cross-platform applications",
+      "Participated in structured training program applying Flutter best practices",
+      "Worked under experienced mentors gaining practical development experience",
+    ],
+  },
+  {
+    company: "Bit Bitter",
+    position: "Android Developer",
+    period: "December 2017 - December 2018",
+    location: "Bangladesh",
+    responsibilities: [
+      "Worked on Android development for mobile applications",
+      "Gained experience in version control and Android framework",
+      "Developed debugging and troubleshooting skills",
+    ],
+  },
+];
+
+export const projects = [
+  {
+    name: "BD Journal",
+    description: "Comprehensive digital newspaper offering breaking news, in-depth analysis, and updates from Bangladesh and around the world.",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=orangebd.newspaper.bdjournal&hl=en",
+    technologies: ["Flutter", "REST API", "News Integration"],
+    iconUrl: "/images/projects/bd_journal.png",
+  },
+  {
+    name: "Kalbela",
+    description: "Bangla newspaper application with latest news",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=apps.newspaper.kalbela",
+    technologies: ["Flutter", "News API"],
+    iconUrl: "/images/projects/kalbela.png",
+  },
+  {
+    name: "Sanvees",
+    description: "E-commerce mobile application with seamless shopping experience",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.sanvees.sanvees",
+    technologies: ["Flutter", "GetX", "REST API"],
+    iconUrl: "/images/projects/sanvees.png",
+  },
+  {
+    name: "My Court",
+    description: "Court case management and tracking system",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.ejudiciary.causelistapp",
+    technologies: ["Flutter", "REST API"],
+    iconUrl: "/images/projects/my_court.png",
+  },
+  {
+    name: "LGD Sheba",
+    description: "Government service application for citizens",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=apps.orangebd.lgdsheba",
+    technologies: ["Flutter", "REST API"],
+    iconUrl: "/images/projects/lgd_sheba.png",
+  },
+  {
+    name: "OrangeBD eDirectory",
+    description: "Digital directory application for business listings",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=apps.orangebd.orangebdedirectory",
+    technologies: ["Flutter", "Firebase", "Maps"],
+    iconUrl: "/images/projects/orangebd_edirectory.png",
+  },
+  {
+    name: "Parcel Star",
+    description: "Parcel delivery tracking application",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.parcelstar.bd",
+    technologies: ["Flutter", "Google Maps", "Real-time tracking"],
+  },
+  {
+    name: "BPPSHOP",
+    description: "One-stop destination for all shopping needs with category-wise product searching, detailed reviews, and great deals on quality products.",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.excelitai.bppshopapp",
+    technologies: ["Flutter", "GetX", "REST API", "Payment Gateway"],
+    iconUrl: "/images/projects/bppshop.jpg",
+  },
+];
