@@ -14,6 +14,7 @@ export const skills = [
   { name: "Riverpod", category: "Mobile", level: 85, icon: "🌊" },
   { name: "Provider", category: "Mobile", level: 85, icon: "🔄" },
   { name: "Android", category: "Mobile", level: 80, icon: "🤖" },
+  { name: "iOS (Swift)", category: "Mobile", level: 75, icon: "📱" },
   { name: "Next.js", category: "Frontend", level: 75, icon: "⚛️" },
   { name: "React", category: "Frontend", level: 75, icon: "⚛️" },
   { name: "TypeScript", category: "Frontend", level: 80, icon: "📘" },
