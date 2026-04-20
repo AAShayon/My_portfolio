@@ -100,6 +100,13 @@ export const projects = [
     iconUrl: "/images/projects/kalbela.png",
   },
   {
+    name: "Boishakhi Online",
+    description: "Popular Bangla newspaper application with breaking news and updates",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=apps.newspaper.boishakhionline",
+    technologies: ["Flutter", "News API"],
+    iconUrl: "/images/projects/boishakhi.png",
+  },
+  {
     name: "Sanvees",
     description: "E-commerce mobile application with seamless shopping experience",
     playStoreUrl: "https://play.google.com/store/apps/details?id=com.sanvees.sanvees",
