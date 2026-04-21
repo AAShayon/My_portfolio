@@ -1,0 +1,54 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Next.js
+        run: npm run build
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+      - name: Checkout deployment repository
+        uses: actions/checkout@v4
+        with:
+          repository: AAShayon/AAShayon.github.io
+          token: ${{ secrets.DEPLOY_TOKEN }}
+          path: deploy-repo
+          clean: false
+
+      - name: Copy build files to deployment repo
+        run: |
+          rm -rf deploy-repo/*
+          cp -r out/* deploy-repo/
+          cp -r .next/static deploy-repo/ 2>/dev/null || true
+          cp -r public/* deploy-repo/ 2>/dev/null || true
+
+      - name: Commit and Push
+        run: |
+          cd deploy-repo
+          git add .
+          git commit -m "Deploy: ${{ github.sha }}" || echo "No changes to commit"
+          git push

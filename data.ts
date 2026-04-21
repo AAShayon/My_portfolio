@@ -1,7 +1,8 @@
 export const personalInfo = {
   name: "MD Asif Afroj Shayon",
   title: "Software Engineer | Flutter Specialist",
-  bio: "Passionate Software Engineer specializing in mobile application development. I thrive on creating impactful, user-friendly solutions with expertise in Flutter, cross-platform development, a[...]\n  location: "Dhaka, Bangladesh",
+  bio: "Passionate Software Engineer specializing in mobile application development. I thrive on creating impactful, user-friendly solutions with expertise in Flutter, cross-platform development, and modern technologies.",
+  location: "Dhaka, Bangladesh",
   company: "Orange Business Development Limited",
   avatar: "https://avatars.githubusercontent.com/u/16820287?v=4",
 };
