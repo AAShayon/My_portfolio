@@ -483,7 +483,7 @@ export default function Home() {
                   <p style={{ color: "#94A3B8", fontSize: "0.9rem", lineHeight: 1.5, margin: 0 }}>{proj.description}</p>
                 </div>
                 <div style={{ marginTop: "auto", borderTop: "1px solid rgba(0, 240, 255, 0.2)", paddingTop: "0.8rem" }}>
-                  <a href={proj.playStoreUrl} target="_blank" rel="noopener noreferrer" className="hover-glow" style={{ color: "#7000FF", textDecoration: "none", fontWeight: 600, fontSize: "0.9rem", display: "flex", alignItems: "center", justifyContent: "space-between", textTransform: "uppercase", letterSpacing: "1px", padding: "0.5rem 0" }}>
+                  <a href={(proj as { playStoreUrl?: string; appStoreUrl?: string }).playStoreUrl || (proj as { appStoreUrl?: string }).appStoreUrl} target="_blank" rel="noopener noreferrer" className="hover-glow" style={{ color: "#7000FF", textDecoration: "none", fontWeight: 600, fontSize: "0.9rem", display: "flex", alignItems: "center", justifyContent: "space-between", textTransform: "uppercase", letterSpacing: "1px", padding: "0.5rem 0" }}>
                     <span style={{ borderBottom: "1px solid #7000FF", paddingBottom: "2px" }}>View</span>
                     <span style={{ transform: "translateX(0)", transition: "transform 0.3s ease" }}>➔</span>
                   </a>
