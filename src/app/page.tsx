@@ -292,8 +292,8 @@ export default function Home() {
                             </div>
                           </div>
                           <div style={{ marginTop: "0.8rem", borderTop: "1px solid rgba(0, 240, 255, 0.2)", paddingTop: "0.8rem" }}>
-                            <a href={(p as { playStoreUrl?: string; appStoreUrl?: string }).playStoreUrl || (p as { appStoreUrl?: string }).appStoreUrl} target="_blank" rel="noopener noreferrer" style={{ color: "#14B8A6", textDecoration: "none", fontWeight: 600, fontSize: "0.8rem", display: "flex", alignItems: "center", justifyContent: "space-between", textTransform: "uppercase", letterSpacing: "1px", padding: "0.2rem 0" }}>
-                              <span style={{ borderBottom: "1px solid #14B8A6", paddingBottom: "2px" }}>View on Store</span>
+                            <a href={(p as { websiteUrl?: string; playStoreUrl?: string; appStoreUrl?: string }).websiteUrl || (p as { playStoreUrl?: string; appStoreUrl?: string }).playStoreUrl || (p as { appStoreUrl?: string }).appStoreUrl} target="_blank" rel="noopener noreferrer" style={{ color: "#14B8A6", textDecoration: "none", fontWeight: 600, fontSize: "0.8rem", display: "flex", alignItems: "center", justifyContent: "space-between", textTransform: "uppercase", letterSpacing: "1px", padding: "0.2rem 0" }}>
+                              <span style={{ borderBottom: "1px solid #14B8A6", paddingBottom: "2px" }}>{(p as { websiteUrl?: string }).websiteUrl ? "Visit Website" : "View on Store"}</span>
                               <span>➔</span>
                             </a>
                           </div>
@@ -322,8 +322,8 @@ export default function Home() {
                           <p style={{ color: "#94A3B8", fontSize: "0.8rem", lineHeight: 1.5, margin: 0 }}>{proj.description}</p>
                         </div>
                         <div style={{ borderTop: "1px solid rgba(0, 240, 255, 0.2)", paddingTop: "0.8rem" }}>
-                          <a href={(proj as { playStoreUrl?: string; appStoreUrl?: string }).playStoreUrl || (proj as { appStoreUrl?: string }).appStoreUrl} target="_blank" rel="noopener noreferrer" style={{ color: "#14B8A6", textDecoration: "none", fontWeight: 600, fontSize: "0.8rem", display: "flex", alignItems: "center", justifyContent: "space-between", textTransform: "uppercase", letterSpacing: "1px", padding: "0.2rem 0" }}>
-                            <span style={{ borderBottom: "1px solid #14B8A6", paddingBottom: "2px" }}>View on Store</span>
+                          <a href={(proj as { websiteUrl?: string; playStoreUrl?: string; appStoreUrl?: string }).websiteUrl || (proj as { playStoreUrl?: string; appStoreUrl?: string }).playStoreUrl || (proj as { appStoreUrl?: string }).appStoreUrl} target="_blank" rel="noopener noreferrer" style={{ color: "#14B8A6", textDecoration: "none", fontWeight: 600, fontSize: "0.8rem", display: "flex", alignItems: "center", justifyContent: "space-between", textTransform: "uppercase", letterSpacing: "1px", padding: "0.2rem 0" }}>
+                            <span style={{ borderBottom: "1px solid #14B8A6", paddingBottom: "2px" }}>{(proj as { websiteUrl?: string }).websiteUrl ? "Visit Website" : "View on Store"}</span>
                             <span>➔</span>
                           </a>
                         </div>

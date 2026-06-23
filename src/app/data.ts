@@ -73,7 +73,18 @@ export const experiences = [
   },
 ];
 
-export const projects = [
+export type Project = {
+  name: string;
+  description: string;
+  playStoreUrl?: string;
+  appStoreUrl?: string;
+  websiteUrl?: string;
+  technologies: string[];
+  iconUrl?: string;
+  ssUrl?: string;
+};
+
+export const projects: Project[] = [
   {
     name: "Kalbela",
     description: "Bangla newspaper application with latest news",
@@ -97,6 +108,14 @@ export const projects = [
     technologies: ["Flutter", "REST API"],
     iconUrl: "/images/projects/my_court.png",
     ssUrl: "/images/project_ss/my_court.png",
+  },
+  {
+    name: "Amarshopping.site",
+    description: "Full multivendor e-commerce platform with hub management, courier integration, and AI chatbot. Built with React and Laravel.",
+    websiteUrl: "https://amarshopping.site",
+    technologies: ["React", "Laravel", "Tailwind CSS", "MySQL", "Firebase", "REST API", "AI Integration"],
+    iconUrl: "/images/projects/amarshopping.png",
+    ssUrl: "/images/project_ss/amarshopping.png",
   },
   {
     name: "BD Journal",
