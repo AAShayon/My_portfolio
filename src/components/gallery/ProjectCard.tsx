@@ -22,16 +22,18 @@ export function ProjectCard({ project, onOpen, className }: ProjectCardProps) {
       )}
     >
       {/* Media — relative z-10 so its own controls sit above the stretched link. */}
-      <div className="relative z-10 p-4">
-        {project.web ? (
-          <WebMedia web={project.web} url={project.url} title={project.title} />
-        ) : project.mobile ? (
-          <PhoneFrame mobile={project.mobile} label={project.title} />
-        ) : (
-          <div className="flex aspect-video items-center justify-center rounded-xl border border-dashed border-line bg-cream text-sm text-muted">
-            Preview coming soon
-          </div>
-        )}
+      <div className="relative z-10 overflow-hidden rounded-xl p-4">
+        <div className="transition-transform duration-500 group-hover:scale-105">
+          {project.web ? (
+            <WebMedia web={project.web} url={project.url} title={project.title} />
+          ) : project.mobile ? (
+            <PhoneFrame mobile={project.mobile} label={project.title} />
+          ) : (
+            <div className="flex aspect-video items-center justify-center rounded-xl border border-dashed border-line bg-cream text-sm text-muted">
+              Preview coming soon
+            </div>
+          )}
+        </div>
       </div>
 
       <div className="flex flex-1 flex-col px-5 pb-5">

@@ -8,13 +8,16 @@ import { Hero } from "@/components/sections/Hero";
 import { Journal } from "@/components/sections/Journal";
 import { Stats } from "@/components/sections/Stats";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { getProjects } from "@/lib/portfolio";
 
 export default function Home() {
+  const projects = getProjects();
+
   return (
     <>
       <Navbar />
       <main id="main">
-        <Hero />
+        <Hero projects={projects} />
         <WorkGallery />
         <Stats />
         <Capabilities />

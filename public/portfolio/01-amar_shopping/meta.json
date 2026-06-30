@@ -6,7 +6,7 @@
   "type": "web",
   "year": "2025",
   "summary": "A full-featured multivendor e-commerce marketplace for the Bangladeshi market with 5 user roles, location-based delivery zones, real-time rider tracking, AI-powered admin chatbot with 6 provider adapters, and SSLCommerz payment integration — built from scratch (351 API endpoints, 58 tables, 47 React screens).",
-  "featured": true,
+  "featured": false,
   "aspect": "4/3",
   "challenges": [
     {

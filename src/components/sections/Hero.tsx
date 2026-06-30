@@ -1,26 +1,13 @@
 "use client";
 
-import Image from "next/image";
-import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
 import { Button } from "@/components/primitives/Button";
 import { Kicker } from "@/components/primitives/Kicker";
 import { Reveal } from "@/components/primitives/Reveal";
-import { images } from "@/config/images";
+import { HeroSlideshow } from "@/components/sections/HeroSlideshow";
 import { site } from "@/content/site";
+import type { Project } from "@/lib/portfolio";
 
-export function Hero() {
-  const bandRef = useRef<HTMLDivElement>(null);
-  const reduce = useReducedMotion();
-
-  // Contained parallax: the inner layer is 120% tall and offset up 10%, so the
-  // ±40px shift never reveals an edge. Disabled under reduced-motion.
-  const { scrollYProgress } = useScroll({
-    target: bandRef,
-    offset: ["start end", "end start"],
-  });
-  const y = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : [40, -40]);
-
+export function Hero({ projects }: { projects: Project[] }) {
   return (
     <section id="home" className="relative bg-cream pt-28 sm:pt-32">
       <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
@@ -57,22 +44,7 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Flat warm texture band with contained parallax. */}
-        <div
-          ref={bandRef}
-          className="relative mt-12 h-[38vh] min-h-[240px] overflow-hidden rounded-3xl border border-line sm:mt-16 md:h-[52vh]"
-        >
-          <motion.div style={{ y }} className="absolute inset-x-0 -top-[10%] h-[120%]">
-            <Image
-              src={images.heroTexture.src}
-              alt={images.heroTexture.alt}
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover"
-            />
-          </motion.div>
-        </div>
+        <HeroSlideshow projects={projects} />
       </div>
     </section>
   );

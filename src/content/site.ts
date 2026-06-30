@@ -72,6 +72,9 @@ export const site = {
     "React",
     "TypeScript",
     "Node",
+    "Laravel",
+    "PHP",
+    "MySQL",
   ],
 
   // Empty → the section does not render. Do not add invented entries.
