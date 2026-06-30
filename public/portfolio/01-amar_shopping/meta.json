@@ -1,0 +1,48 @@
+{
+  "title": "AmarShopping (Ponno Kinun)",
+  "role": "Full-Stack Developer · Built from scratch",
+  "tags": ["React", "TypeScript", "Laravel", "PHP", "MySQL", "Firebase", "Tailwind CSS", "REST API", "SSLCommerz"],
+  "url": "https://amarshopping.site/",
+  "type": "web",
+  "year": "2025",
+  "summary": "A full-featured multivendor e-commerce marketplace for the Bangladeshi market with 5 user roles, location-based delivery zones, real-time rider tracking, AI-powered admin chatbot with 6 provider adapters, and SSLCommerz payment integration — built from scratch (351 API endpoints, 58 tables, 47 React screens).",
+  "featured": true,
+  "aspect": "4/3",
+  "challenges": [
+    {
+      "title": "Guest-to-Customer Order Flow",
+      "problem": "Users should browse and order without logging in, but orders must be linked if they later create an account",
+      "solution": "resolve-guest middleware assigns a UUID guest token. When the guest upgrades (adds password), all their guest orders/cart merge into the new account"
+    },
+    {
+      "title": "Real-Time Rider Location",
+      "problem": "Admin needs to track rider positions on a map without polling",
+      "solution": "Riders POST their lat/lng periodically; Leaflet map in admin panel renders markers that refresh via React Query"
+    },
+    {
+      "title": "Delivery OTP Verification",
+      "problem": "Must prove the customer received the package without expensive SMS gateways",
+      "solution": "OTP generated at picked-up status, emailed to customer, rider enters it at delivery to confirm — if wrong, delivery fails"
+    },
+    {
+      "title": "AI Chatbot SSE Streaming",
+      "problem": "AI responses take 5-30 seconds — users need to see tokens as they arrive, not wait for full response",
+      "solution": "Server-Sent Events (SSE) with ob_flush()/flush(). OpenRouter adapter reads the stream chunk-by-chunk and pushes each token via SSE. Other providers fall back to JSON. Fixed ob_start() buffer issues and timeout errors"
+    },
+    {
+      "title": "Web Product Research Agent",
+      "problem": "Admin needs to discover trending products from AliExpress/Amazon/Daraz and import them",
+      "solution": "DuckDuckGo search → fetch article pages in parallel → strip HTML → send to LLM (GPT-4o-mini) for extraction → returns [{name, price, image}] → Add to Store button downloads image and creates product. 3-phase fallback: LLM → JSON-LD → deep fetch"
+    },
+    {
+      "title": "Cross-Branch Order Forwarding",
+      "problem": "An order destined for a district served by a different hub",
+      "solution": "Hub managers can forward orders to another branch; the receiving hub then assigns the rider"
+    },
+    {
+      "title": "6 AI Providers in One Grid",
+      "problem": "Each provider has different API formats, models, and auth",
+      "solution": "Adapter pattern — AiProviderInterface with chat() and streamChat(), factory routes to the right adapter. Admin UI shows all 6 in a 2-column grid with per-provider config"
+    }
+  ]
+}

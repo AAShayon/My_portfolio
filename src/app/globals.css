@@ -1,25 +1,122 @@
 @import "tailwindcss";
 
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{color:#e0e6ed;background-color:#050510;background-attachment:fixed;font-family:Outfit,Inter,-apple-system,BlinkMacSystemFont,sans-serif;overflow-x:hidden}
-::-webkit-scrollbar{width:6px}
-::-webkit-scrollbar-track{background:#050510}
-::-webkit-scrollbar-thumb{background:#14b8a6;border-radius:4px}
-::-webkit-scrollbar-thumb:hover{background:#0d9488}
-@keyframes fadeInUp{0%{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fadeIn{0%{opacity:0}to{opacity:1}}
-@keyframes glowPulse{0%{box-shadow:0 0 5px #14b8a633}50%{box-shadow:0 0 20px #14b8a680,0 0 10px #0d94884d}to{box-shadow:0 0 5px #14b8a633}}
-@keyframes floating{0%{transform:translateY(0)}50%{transform:translateY(-10px)}to{transform:translateY(0)}}
-:root{--nav-height:80px}
-@media (max-width:768px){html{scroll-padding-top:var(--nav-height)}h1{font-size:1.8rem!important}h2{font-size:2rem!important}p{font-size:1rem!important}.mobile-stack{text-align:center;flex-direction:column!important}.mobile-reverse{flex-direction:column-reverse!important}.mobile-padding{padding-left:1rem!important;padding-right:1rem!important}.mobile-hidden{display:none!important}.desktop-hidden{display:flex!important}.grid-2{grid-template-columns:1fr!important}}
-.desktop-hidden{display:none}
-.mobile-nav-overlay{-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);z-index:999;background:#050510f2;flex-direction:column;justify-content:center;align-items:center;gap:2rem;width:100%;height:calc(100vh - 80px);transition:transform .3s ease-in-out;display:flex;position:fixed;top:80px;left:0;transform:translate(100%)}
-.mobile-nav-overlay.open{transform:translate(0)}
-body:before{background-size:30px 30px}
-.glass{-webkit-backdrop-filter:blur(16px);background:#0a0a19b3;border:1px solid #14b8a61a;box-shadow:0 4px 30px #0000001a}
-.glass-panel{-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);background:rgba(255,255,255,0.03);border:1px solid #ffffff0d;box-shadow:0 8px 32px #0000005e}
-.neon-text{text-shadow:0 0 10px #14b8a680}
-.accent-text{color:#14b8a6}
-.hover-glow:hover{animation:2s infinite glowPulse}
-section{position:relative;overflow:hidden}
+/*
+ * FLAT DESIGN SYSTEM — solid fills only, ZERO gradients.
+ * Tailwind v4 reads these custom properties from @theme and generates the
+ * matching utilities (e.g. --color-accent → bg-accent / text-accent / border-accent,
+ * --font-display → font-display).
+ */
+@theme {
+  /* Palette — solid colors */
+  --color-cream: #ece7dc; /* warm cream — default page bg */
+  --color-ink: #141210; /* warm near-black — dark sections + text on light */
+  --color-card: #fbf9f4; /* off-white card on cream */
+  --color-card-ink: #1e1b18; /* raised card on ink sections */
+  --color-accent: #e8492a; /* coral/orange — primary, buttons, kickers */
+  --color-accent-deep: #b83617; /* darker coral — solid hover swap */
+  --color-forest: #1e3d2b; /* deep green — secondary accent */
+  --color-cream-text: #f2eee6; /* text on dark */
+  --color-muted: #6b6258; /* secondary text on light */
+  --color-muted-ink: #a39a8c; /* secondary text on dark */
+  --color-line: #dad3c6; /* hairline borders on light */
+  --color-line-ink: #322e29; /* hairline borders on dark */
+
+  /* Typography — wired to next/font CSS variables (see layout.tsx) */
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-space-mono), ui-monospace, "SFMono-Regular", monospace;
+
+  /* One soft, single-direction shadow shared by cards and frames (flat depth). */
+  --shadow-soft: 0 18px 40px -30px rgba(20, 18, 16, 0.55);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Offset anchor jumps so the sticky navbar doesn't cover section tops. */
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Visible, consistent focus ring for keyboard users across the warm palette. */
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-cream-text);
+  }
+
+  /* Display headings use the heavy grotesque with tight tracking. */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+/*
+ * Auto-scroll for tall screenshots (web-full / mobile-full). The frame is a
+ * size container; 100cqh is the frame height and 100% is the image's own
+ * height, so translateY(calc(100cqh - 100%)) lands the image's bottom at the
+ * frame's bottom — the exact scroll distance, computed with zero JS. The class
+ * is only applied when in view / hovered and is never applied under
+ * reduced-motion, so the static state shows the top of the screenshot.
+ */
+@layer utilities {
+  .scroll-shot-animate {
+    animation: scroll-shot 16s ease-in-out infinite;
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes scroll-shot {
+  0%,
+  8% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(calc(100cqh - 100%));
+  }
+  92%,
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/*
+ * Global reduced-motion baseline. Every animated component ALSO guards itself
+ * (via motion's useReducedMotion or matchMedia), but this is the safety net:
+ * it neutralizes any stray CSS transition/animation and disables smooth scroll.
+ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

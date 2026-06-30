@@ -1,0 +1,10 @@
+{
+  "title": "Boishakhi Online",
+  "role": "Flutter Developer · Full Build",
+  "tags": ["Flutter", "Dart", "Firebase", "REST API", "Android", "iOS", "News"],
+  "type": "mobile",
+  "year": "2024",
+  "summary": "Official mobile app for Boishakhi Online, a leading Bangladeshi Bangla news portal under Boishakhi Media Limited. Delivers real-time news, breaking news alerts, live TV, video content, and ePaper access across all major categories — national, politics, sports, entertainment, business, and more.",
+  "playStore": "https://play.google.com/store/apps/details?id=apps.newspaper.boishakhionline&hl=en",
+  "featured": false
+}

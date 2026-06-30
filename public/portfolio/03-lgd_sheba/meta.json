@@ -1,0 +1,10 @@
+{
+  "title": "LGD Sheba",
+  "role": "Flutter Developer · Full Build",
+  "tags": ["Flutter", "Dart", "Firebase", "REST API", "Android", "iOS", "Payment Gateway"],
+  "type": "mobile",
+  "year": "2024",
+  "summary": "A public service mobile application built for Orange Business Development Ltd, enabling citizens of Bangladesh to access local governance and Union Parishad civic services remotely — apply for certificates, verify NID, make online payments, and maintain a secure certificate repository.",
+  "playStore": "https://play.google.com/store/apps/details?id=apps.orangebd.lgdsheba",
+  "featured": false
+}

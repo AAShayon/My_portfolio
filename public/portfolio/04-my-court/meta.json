@@ -1,0 +1,11 @@
+{
+  "title": "Amar Adalat (MyCourt)",
+  "role": "Flutter Developer · Full Build",
+  "tags": ["Flutter", "Dart", "Firebase", "REST API", "Android", "iOS", "e-Judiciary"],
+  "type": "mobile",
+  "year": "2022",
+  "summary": "A digital judicial service mobile app launched by the Law and Justice Division, UNDP Bangladesh, and a2i. Enables citizens, judges, and lawyers to access cause lists, case status, next hearing dates, and court information for lower courts across Bangladesh — part of the national e-Judiciary project.",
+  "playStore": "https://play.google.com/store/apps/details?id=com.ejudiciary.causelistapp",
+  "appStore": "https://apps.apple.com/my/app/my-court/id1633376688",
+  "featured": false
+}

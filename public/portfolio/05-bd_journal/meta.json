@@ -1,0 +1,10 @@
+{
+  "title": "Bangladesh Journal",
+  "role": "Flutter Developer · Full Build",
+  "tags": ["Flutter", "Dart", "Firebase", "REST API", "Android", "iOS", "News"],
+  "type": "mobile",
+  "year": "2024",
+  "summary": "Official mobile app for The Daily Bangladesh Journal, a leading Bangla print and online newspaper based in Dhaka. Provides real-time news updates, multimedia content, and ePaper access — built for Orange Business Development Ltd.",
+  "playStore": "https://play.google.com/store/apps/details?id=orangebd.newspaper.bdjournal&hl=en",
+  "featured": false
+}

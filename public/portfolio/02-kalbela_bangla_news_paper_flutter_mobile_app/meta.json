@@ -1,0 +1,11 @@
+{
+  "title": "Kalbela Bangla Newspaper",
+  "role": "Flutter Developer · Full Build",
+  "tags": ["Flutter", "Dart", "Firebase", "REST API", "Push Notifications", "Android", "iOS"],
+  "type": "mobile",
+  "year": "2024",
+  "summary": "Official Flutter mobile app for Kalbela, one of Bangladesh's fastest-growing Bangla newspapers. Features real-time news updates, rich multimedia content, ePaper access with pinch-to-zoom, live streaming, breaking news alerts, customizable push notifications, and social sharing — delivering the complete newspaper experience on both Android and iOS from a single codebase.",
+  "playStore": "https://play.google.com/store/apps/details?id=apps.newspaper.kalbela&pcampaignid=web_share",
+  "appStore": "https://apps.apple.com/us/app/kalbela-bangla-newspaper/id6476605509",
+  "featured": false
+}
