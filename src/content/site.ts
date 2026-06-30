@@ -23,6 +23,7 @@ export type Testimonial = { name: string; role: string; company?: string; quote:
 export type JournalPost = { title: string; href: string; date?: string };
 export type FaqItem = { q: string; a: string };
 export type NavLink = { label: string; href: string };
+export type StackCategory = { category: string; items: string[] };
 
 export const site = {
   profile: {
@@ -61,21 +62,14 @@ export const site = {
     // fabricated and removed. Add real, verifiable numbers here when available.
   ] satisfies Stat[],
 
-  // Real, confirmed coding stack (verified against aashayon.github.io and the
-  // confirmed stack list). Mobile-first ordering. Add more here as confirmed.
+  // Real, confirmed coding stack organized by domain.
   stack: [
-    "Flutter",
-    "Dart",
-    "Firebase",
-    "REST APIs",
-    "Next.js",
-    "React",
-    "TypeScript",
-    "Node",
-    "Laravel",
-    "PHP",
-    "MySQL",
-  ],
+    { category: "Frontend", items: ["Next.js", "React", "TypeScript", "Tailwind"] },
+    { category: "Backend", items: ["Laravel", "PHP", "MySQL", "REST APIs", "Firebase"] },
+    { category: "Mobile", items: ["Flutter", "Dart", "iOS", "Android"] },
+    { category: "AI & Automation", items: ["OpenAI API", "Gemini CLI", "Claude Code", "RAG"] },
+    { category: "DevOps", items: ["cPanel", "cPanel Terminal", "FTP", "SSH", "GitHub Actions"] },
+  ] satisfies StackCategory[],
 
   // Empty → the section does not render. Do not add invented entries.
   // (`as` keeps the element type; `satisfies` on an empty array infers never[].)
@@ -90,12 +84,12 @@ export const site = {
     },
     {
       q: "Do you build both mobile apps and web platforms?",
-      a: "Yes — Flutter for mobile, Next.js/React for web, shared backends.",
+      a: "Yes — Flutter for mobile, Next.js, React, Laravel for web.",
     },
     { q: "What's your typical project timeline?", a: "" },
     {
       q: "What's your stack?",
-      a: "Flutter, Dart, Firebase for mobile; Next.js, React, TypeScript for web.",
+      a: "Mobile: Flutter, Dart, Firebase. Web: Next.js, React, TypeScript, Laravel, PHP, MySQL.",
     },
     { q: "Can you take over or refactor an existing codebase?", a: "" },
     { q: "Do you offer ongoing maintenance and support?", a: "" },

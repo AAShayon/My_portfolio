@@ -7,7 +7,7 @@ import { Section } from "@/components/primitives/Section";
 import { useCountUp } from "@/hooks/useCountUp";
 import { useInView } from "@/hooks/useInView";
 import { site } from "@/content/site";
-import type { Stat } from "@/content/site";
+import type { StackCategory, Stat } from "@/content/site";
 
 function StatCard({ stat }: { stat: Stat }) {
   const { ref, inView } = useInView<HTMLDivElement>({ once: true });
@@ -67,16 +67,25 @@ export function Stats() {
           <Reveal delay={0.08} className={hasStats ? "md:col-span-2" : "md:col-span-3"}>
             <Card variant="light" className="flex h-full flex-col p-6 md:p-8">
               <p className="font-mono text-xs uppercase tracking-wide text-muted">Tech stack</p>
-              <ul className="mt-5 flex flex-wrap gap-2.5">
-                {stack.map((tech) => (
-                  <li
-                    key={tech}
-                    className="rounded-full border border-line bg-cream px-3.5 py-1.5 font-mono text-sm text-ink"
-                  >
-                    {tech}
-                  </li>
+              <div className="mt-5 grid grid-cols-1 gap-6 sm:grid-cols-2">
+                {stack.map((group: StackCategory) => (
+                  <div key={group.category}>
+                    <p className="font-mono text-[0.65rem] uppercase tracking-[0.15em] text-accent">
+                      {group.category}
+                    </p>
+                    <ul className="mt-2 flex flex-wrap gap-2">
+                      {group.items.map((tech) => (
+                        <li
+                          key={tech}
+                          className="rounded-full border border-line bg-cream px-3 py-1 font-mono text-sm text-ink"
+                        >
+                          {tech}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </Card>
           </Reveal>
         ) : null}
