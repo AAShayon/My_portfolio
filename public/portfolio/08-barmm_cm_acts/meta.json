@@ -1,0 +1,10 @@
+{
+  "title": "BARMM CM-ACTS",
+  "role": "Android & iOS Developer · Full Build",
+  "tags": ["Kotlin", "Swift", "Android", "iOS", "REST API", "Firebase"],
+  "type": "mobile",
+  "year": "2022",
+  "summary": "Community Monitoring and Actionable Concerns Tracking System (CM-ACTS) — a digital platform for community feedback in the Bangsamoro Autonomous Region in Muslim Mindanao (BARMM), built natively for both Android and iOS.",
+  "playStore": "https://play.google.com/store/apps/details?id=com.barmm.cfmv3&pcampaignid=web_share",
+  "appStore": "https://apps.apple.com/us/app/barmm-cm-acts/id1628960693"
+}
