@@ -1,0 +1,9 @@
+{
+  "title": "Bahok Rider",
+  "role": "Flutter Developer · Full Build",
+  "tags": ["Flutter", "Dart", "Firebase", "REST API", "Android", "iOS"],
+  "type": "mobile",
+  "year": "2025",
+  "summary": "A courier rider companion app for Bahok Courier — riders can accept pickup requests, manage deliveries, and track their earnings, all from their phone.",
+  "playStore": "https://play.google.com/store/apps/details?id=com.bc.rider&hl=en"
+}
