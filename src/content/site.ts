@@ -98,18 +98,18 @@ export const site = {
     { q: "Do you offer ongoing maintenance and support?", a: "" },
   ] satisfies FaqItem[],
 
-  // Only verified channels. LinkedIn / X / email are intentionally omitted (not
-  // fabricated) until confirmed.
   social: {
     github: "https://github.com/AAShayon",
+    linkedin: "https://www.linkedin.com/in/aashayon",
+    whatsapp: "https://wa.me/8801580873412",
+    twitter: "https://twitter.com/Shayon01",
+    facebook: "https://facebook.com/shayon",
   },
 
   cta: {
     heading: "Let's build something great together",
-    // DECISION: no booking link or email is confirmed, so the CTA routes to the
-    // only verified contact channel — GitHub.
     buttonLabel: "Get in touch",
-    href: "https://github.com/AAShayon",
+    href: "https://wa.me/8801580873412",
   },
 
   // Nav reflects only sections that actually render (Journal & Testimonials are

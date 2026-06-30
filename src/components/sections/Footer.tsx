@@ -12,11 +12,21 @@ type FooterLink = {
   readonly external?: boolean;
 };
 
-// Only verified social channels (GitHub today). Empty hrefs are dropped — never
-// fabricate LinkedIn/X/email/resume links.
-const connectLinks: FooterLink[] = [
-  { label: "GitHub", href: site.social.github, external: true },
-].filter((link) => link.href.length > 0);
+const socialLabels: Record<string, string> = {
+  github: "GitHub",
+  linkedin: "LinkedIn",
+  whatsapp: "WhatsApp",
+  twitter: "Twitter / X",
+  facebook: "Facebook",
+};
+
+const connectLinks: FooterLink[] = Object.entries(site.social)
+  .filter(([, href]) => href.length > 0)
+  .map(([key, href]) => ({
+    label: socialLabels[key] ?? key,
+    href,
+    external: true,
+  }));
 
 const columns: { heading: string; links: readonly FooterLink[] }[] = [
   { heading: "Main", links: site.nav },
