@@ -1,9 +1,41 @@
 {
   "title": "Swipe & Study",
-  "role": "iOS Developer · Full Build",
+  "role": "iOS Developer · Team Member",
   "tags": ["Swift", "iOS", "Firebase", "REST API"],
   "type": "mobile",
   "year": "2025",
-  "summary": "A tutor matching app that lets students swipe to find their ideal tutor. Features smart filters, scheduling, instant messaging, and seamless session booking.",
-  "appStore": "https://apps.apple.com/au/app/swipe-study/id6456793449"
+  "summary": "A tutor matching platform that connects students with tutors through an intuitive, swipe-based interface — blending gamification, real-time interaction, and user-centric design to transform academic support.",
+  "appStore": "https://apps.apple.com/au/app/swipe-study/id6456793449",
+  "challenges": [
+    {
+      "title": "Swipe-Based Tutor Matching",
+      "problem": "Building a Tinder-like card swiping experience that feels fluid while maintaining tutor profile density and preventing accidental swipes",
+      "solution": "Custom UIView with pan gesture recognizer and snap-back animation. Cards stack with transform scale/rotation — left swipes dismiss, right swipes trigger match animation and push notification to tutor"
+    },
+    {
+      "title": "Moolah Wallet & In-App Currency",
+      "problem": "Students need to purchase in-app currency for premium features — transactions must be secure, trackable, and auditable without exposing payment logic on the client",
+      "solution": "Firebase Functions handle purchase verification via StoreKit receipt validation. Wallet balance stored server-side in Firestore with transaction history; client reads only via server-backed queries"
+    },
+    {
+      "title": "Real-Time Messaging Between Matched Pairs",
+      "problem": "Students and tutors need instant messaging after matching — messages must persist, show delivery status, and enforce read receipts without excessive Firestore reads",
+      "solution": "Firebase Firestore listener on a per-match subcollection. Messages batched with server timestamps; unread count aggregated via Cloud Function on write. Typing indicators use a debounced presence field"
+    },
+    {
+      "title": "Appointment & Session Scheduling",
+      "problem": "Students and tutors operate on different timezones and availability windows — double-booking and missed sessions must be prevented",
+      "solution": "CalendarKit-based availability picker stores weekly recurring slots per tutor. Booking request creates a pending session; tutor must confirm within 24h or it auto-cancels. iCal export for device calendar sync"
+    },
+    {
+      "title": "Post-Session Feedback & Ratings",
+      "problem": "Both parties need accountability but anonymous ratings can be abused — must detect and prevent retaliatory low ratings",
+      "solution": "Ratings revealed only after both parties submit. If one party doesn't rate within 72h, average defaults. Pattern detection in Cloud Functions flags suspicious rating sequences for manual review"
+    },
+    {
+      "title": "Premium Upgrades & Subscription Tiers",
+      "problem": "Different feature sets for free vs premium users — paywall logic must be server-driven to prevent client-side tampering",
+      "solution": "StoreKit 2 Entitlement checked at app launch; premium features gated via remote config flags from Firestore. Restore purchases flow with AppTransaction verification. Feature flags toggle UI elements without recompilation"
+    }
+  ]
 }
